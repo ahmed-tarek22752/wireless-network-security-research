@@ -1,73 +1,497 @@
-# wifi-penetration-testing
-Wi-Fi hacking is the unauthorized intrusion into wireless networks by exploiting security vulnerabilities. It typically involves bypassing or breaking encryption protocols, such as WEP, WPA, or WPA2, to gain access, intercept data, or control connected devices.                           
-Threats Across Home, Public, and Enterprise Networks
-Wi-Fi hacking could be for an immediate payoff or as a foothold for a future attack known as an advanced persistent threat (APT) attack. It can have many purposes and often depends on the type of network being targeted:
+# Wi-Fi Penetration Testing & Wireless Security Research
 
-Home Networks: Hackers infiltrate personal networks connecting homes to the internet in order to gain unauthorized access to data or compromise the network for illegal activities.
-Public Networks: Once infiltrated, public wireless networks enable cybercriminals to intercept or manipulate data for various purposes, including credential theft, session hijacking, and malware injection.
-Enterprise Networks: Hacking larger Wi-Fi networks deployed for business operations can lead to major data breaches and the deployment of ransomware in order to extort a reward from the organization.
-How Wi-Fi Hacking Works: 6 Common Techniques
-Cybercriminals can infiltrate wireless network security and hack Wi-Fi in many different ways.
+> **Authorized Security Testing Only**
+> This repository is an educational wireless-security research project designed for controlled lab environments and networks that you own or have explicit permission to test.
 
-#1. Man-in-the-Middle Attacks
-Cybercriminals create fake public Wi-Fi, and once users join the network, hackers are free to intercept and manipulate traffic, positioning themselves “in the middle” between users or users and an application. This allows the hacker to access and steal information moving back and forth or imitate one of the parties for malicious activities.
+## Overview
 
-This includes coercing users to reveal sensitive information such as their credit card numbers or login credentials. Typically, man-in-the-middle attacks target users communicating with:
+Wireless networks are a critical attack surface across home, public, and enterprise environments. This project provides a structured methodology for assessing Wi-Fi security, identifying weaknesses in wireless configurations, analyzing attack indicators, and developing defensive controls.
 
-E-commerce platforms
-SaaS apps
-Banking apps
-#2. Brute Force Attacks
-Using bots to try combinations of popular password phrases or random inputs, attackers can eventually gain access to Wi-Fi networks – “brute forcing” their way in. Once they have a foothold on the network, they can steal sensitive information, inject malware, and interfere with operations.
+Rather than focusing only on individual attacks, the project approaches Wi-Fi security as a complete assessment lifecycle:
 
-#3. Packet Sniffing
-A passive way of hacking Wi-Fi, packet sniffing intercepts data packets moving across wireless networks with the goal of obtaining sensitive information.
+**Reconnaissance → Wireless Enumeration → Security Analysis → Controlled Validation → Detection → Mitigation → Reporting**
 
-These attacks often target unsecured public networks, monitoring suitable Wi-Fi network activity to target.
+The objective is to understand how wireless weaknesses can lead to unauthorized access or further compromise, while developing practical techniques for detecting and reducing those risks.
 
-#4. Phishing Attacks
-Phishing attempts to actively deceive users, making them willingly or accidentally provide their sensitive information to the attacker or download malware themselves. This typically involves impersonating a trusted entity or someone they know using email or other online messages.
+---
 
-Phishing is often the entry point for other attacks, such as:
+## Research Objectives
 
-Cross-Site Scripting (XSS): Adding malware to trusted sites when the user accesses it. This can be done in multiple ways, including adding it to the end of the URL.
-On-Path Attacks: The hacker intercepts traffic between the web browser and server to either gain access to sensitive data or mimic the communications to manipulate the end user.
-#5. Evil Twin Attacks
-Phishing and evil twin attacks are both forms of social engineering attacks that aim to trick users.
+This project investigates:
 
-In evil twin attacks or rogue wireless access point attacks, cybercriminals create false Wi-Fi networks to capture information on the users accessing it. These malicious networks are set up near legitimate networks that the user is likely already familiar with while also utilizing similar-sounding names.
+* Wireless network discovery and security enumeration
+* IEEE 802.11 security mechanisms
+* WPA2/WPA3 authentication architecture
+* Weak wireless configurations
+* Rogue access points and Evil Twin risks
+* Management-frame security
+* Authentication and association behavior
+* Wireless traffic analysis
+* Deauthentication-related security risks
+* Captive portal and phishing risks
+* Wireless network segmentation
+* Enterprise Wi-Fi security controls
+* Detection of suspicious wireless activity
+* Defensive monitoring and incident response
 
-Cybercriminals can now quickly create evil twin networks using Internet-capable devices and readily available software.
+---
 
-#6. Jamming Attacks
-Jamming is a type of denial of service (DoS) attack that floods the Wi-Fi network with unwanted interference to inhibit performance or prevent legitimate devices from connecting. The ultimate goal is often to render the network unusable. Generally, jamming attacks require the use of physical devices to create the necessary noise to interfere with network operations.
+## Security Assessment Methodology
 
-5 Best Practices to Prevent Wi-Fi Hacking
-5 Best Practices to Prevent Wi Fi Hacking
+### 1. Wireless Reconnaissance
 
-While attackers have multiple methods to hack into your Wi-Finetwork, with some simple network security best practices, you can significantly reduce the risks they pose.
+The assessment begins by identifying authorized wireless infrastructure and collecting non-invasive information such as:
 
-Strengthen Authentication Processes: This can be as simple as regularly updating your Wi-Fi password and selecting a strong series of characters to improve resistance to brute force attacks. It can also be a more sophisticated upgrade, such as transitioning to digital certificates that provide additional authentication information related to the user and the device in use. Ideal for enterprise networks with many users.
-Utilize Strong Encryption: Rely on the latest Wi-Fi encryption standards, like WPA2-AES or WPA3, to protect your wireless networks. Older standards (e.g., WEP and WPA) provide lesser protections and are vulnerable to common hacking processes.
-Segment Your Network: Particularly important for enterprise networks with many devices connected and visitors coming and going, network segmentation adds new layers of protection. By dividing the network into smaller chunks, you can isolate higher-risk segments (e.g., guest networks for visitors, IoT device networks, etc.) and reduce the impact of Wi-Fi hacking by preventing breaches from spreading to the entire network.
-Monitor Network Activity: Businesses with networks containing sensitive information should monitor and log activity to help identify suspicious behavior. This includes keeping router logs and implementing network monitoring tools to check for unauthorized access or unusual patterns.
-Keep Firmware and Software Up-To-Date: Enable automatic updates to ensure router firmware and all connected devices’ software remain up-to-date with the latest security patches. This means your systems are updated to protect against new vulnerabilities as they are identified.
-Ensuring Public Wi-Fi Security
-Given the added risk they pose, special considerations have to be taken when accessing public Wi-Fi networks:
+* SSID
+* BSSID
+* Channel
+* Operating frequency
+* Encryption/authentication type
+* Signal characteristics
+* Access-point relationships
+* Visible wireless clients where appropriate
 
-Always double-check the network name before connecting and check for multiple networks with similar names.
-Disable auto-connect and remove networks from your device when you no longer need them.
-Utilize a VPN to encrypt the data passing between your device and the network.
-Set up multi-factor authentication when logging into apps and websites to ensure only you have access.
-Limit your activity and avoid accessing your most sensitive services, such as banking apps.
-The convenience of public Wi-Fi networks is at odds with the additional risk they can pose. Therefore, your public network security best practices should always be stricter than those of personal or enterprise networks.
+The objective is to establish an accurate wireless attack-surface inventory before performing any validation.
 
-The Signs of Wi-Fi Hacking
-In the event that these network security best practices fall short, it is crucial to know the signs of Wi-Fi hacking.
+---
 
-The quicker you can identify and respond to compromised wireless networks, the faster you can start fixing the problem and limit its impact.
+### 2. Security Configuration Analysis
 
-Common indications of Wi-Fi hacking include:
+Each discovered network is evaluated for security weaknesses.
+
+Example assessment areas:
+
+| Control              | Assessment               |
+| -------------------- | ------------------------ |
+| WPA2/WPA3            | Authentication strength  |
+| WEP/WPA              | Legacy protocol exposure |
+| WPS                  | Configuration risk       |
+| Management frames    | Protection mechanisms    |
+| Network segmentation | Guest/IoT isolation      |
+| AP configuration     | Rogue-device exposure    |
+| Authentication       | Enterprise vs. personal  |
+| Firmware             | Patch status             |
+| Monitoring           | Detection capability     |
+
+---
+
+## 3. Wireless Traffic Analysis
+
+Controlled packet captures are analyzed to understand wireless communication and identify abnormal behavior.
+
+The research examines:
+
+* Beacon frames
+* Probe requests/responses
+* Authentication frames
+* Association frames
+* EAPOL traffic
+* Management frames
+* Data-frame behavior
+* Channel utilization
+* Unexpected access points
+
+Tools such as **Wireshark** can be used to inspect captures and understand the relationship between wireless events and security controls.
+
+---
+
+## 4. Rogue Access Point & Evil Twin Research
+
+A controlled laboratory scenario is used to study the security implications of unauthorized access points.
+
+The experiment evaluates:
+
+1. How a rogue AP can resemble a legitimate network
+2. How users may incorrectly trust a familiar SSID
+3. What information can be exposed during an unsafe connection
+4. How wireless monitoring systems can detect the anomaly
+5. Which organizational controls reduce the risk
+
+The objective is **detection and defensive understanding**, not unauthorized interception.
+
+---
+
+## 5. Authentication Security
+
+The project investigates authentication mechanisms used by modern wireless networks.
+
+Areas of study include:
+
+* WPA2-Personal
+* WPA3-Personal
+* WPA2-Enterprise
+* EAP authentication
+* PMK/PMKID concepts
+* 4-way handshake architecture
+* Password-strength risks
+* Certificate validation
+* Authentication failure monitoring
+
+The research compares the security properties of different authentication architectures rather than simply demonstrating password attacks.
+
+---
+
+## 6. Management-Frame Security
+
+802.11 management frames play an important role in wireless network availability and security.
+
+The project studies:
+
+* Authentication frames
+* Association/disassociation events
+* Deauthentication events
+* Management-frame protection
+* 802.11w / Protected Management Frames
+* Detection of abnormal management-frame activity
+
+### Defensive Objective
+
+Develop indicators that can help distinguish normal wireless activity from suspicious bursts of authentication or management events.
+
+---
+
+## 7. Wireless Intrusion Detection
+
+A defensive monitoring layer can be developed to identify suspicious wireless behavior.
+
+Potential detection indicators include:
+
+```text
+Unexpected SSID
+Unexpected BSSID
+Duplicate SSID
+Unusual channel activity
+Rapid authentication failures
+Abnormal deauthentication activity
+Unexpected access point
+Unexpected encryption downgrade
+Suspicious signal changes
+```
+
+These indicators can then be mapped to security alerts and investigation workflows.
+
+---
+
+# Laboratory Architecture
+
+A safe test environment can be constructed using:
+
+```text
+                 ┌─────────────────────┐
+                 │   Security Analyst  │
+                 │   Linux Workstation │
+                 └──────────┬──────────┘
+                            │
+                     Monitoring / Analysis
+                            │
+                 ┌──────────▼──────────┐
+                 │   Wireless Lab AP   │
+                 │    WPA2 / WPA3      │
+                 └──────────┬──────────┘
+                            │
+             ┌──────────────┼──────────────┐
+             │              │              │
+        Test Client     Test Client     IoT Device
+```
+
+All experiments should be performed using equipment and devices controlled by the researcher.
+
+---
+
+# Tooling
+
+### Wireless Analysis
+
+* Aircrack-ng
+* Kismet
+* Wireshark
+* hcxdumptool / hcxtools
+* iw
+* tcpdump
+
+### Security Monitoring
+
+* Zeek
+* Suricata
+* Wazuh
+* Splunk
+
+### Operating Environment
+
+* Kali Linux
+* Ubuntu
+* Dedicated wireless test hardware
+
+---
+
+# Research Experiments
+
+## Experiment 01 — Wireless Reconnaissance
+
+**Goal:** Build an inventory of authorized wireless infrastructure.
+
+Collect:
+
+```text
+SSID
+BSSID
+Channel
+Frequency
+Encryption
+Authentication
+Signal strength
+```
+
+### Expected Result
+
+Generate a structured wireless asset inventory and identify potentially weak configurations.
+
+---
+
+## Experiment 02 — WPA2 vs WPA3 Security Analysis
+
+Compare:
+
+```text
+WPA2-Personal
+        ↓
+4-Way Handshake
+        ↓
+PSK-Based Authentication
+
+WPA3-Personal
+        ↓
+SAE
+        ↓
+Improved Resistance to Offline Password Guessing
+```
+
+Document the architectural differences and their security implications.
+
+---
+
+## Experiment 03 — Rogue AP Detection
+
+Create a controlled test environment containing an authorized laboratory AP and a simulated unauthorized AP.
+
+Investigate:
+
+* SSID duplication
+* BSSID changes
+* Channel differences
+* Signal anomalies
+* Authentication behavior
+
+### Detection Objective
+
+Develop rules capable of identifying suspicious access points.
+
+---
+
+## Experiment 04 — Management-Frame Monitoring
+
+Capture wireless management traffic in the lab and identify:
+
+* Authentication events
+* Association events
+* Disassociation events
+* Deauthentication events
+
+Then develop detection logic for abnormal event rates.
+
+---
+
+## Experiment 05 — Wireless Segmentation
+
+Evaluate whether:
+
+```text
+Guest Network
+      │
+      ├── Internet
+      │
+      └── No Internal Access
+
+IoT Network
+      │
+      ├── Restricted Services
+      │
+      └── No Sensitive Systems
+
+Corporate Network
+      │
+      └── Protected Resources
+```
+
+are appropriately isolated.
+
+---
+
+# Detection Engineering
+
+Example conceptual detection rule:
+
+```text
+IF
+
+    Same SSID
+    +
+    New / Unknown BSSID
+    +
+    Unexpected Channel
+    +
+    Signal strength significantly different
+
+THEN
+
+    Generate "Potential Rogue AP" Alert
+```
+
+Another example:
+
+```text
+IF
+
+    Authentication / Deauthentication events
+    exceed a defined baseline
+
+THEN
+
+    Generate "Abnormal Wireless Management Activity"
+```
+
+Thresholds should be calibrated against the normal behavior of the specific environment rather than copied blindly.
+
+---
+
+# Risk Assessment
+
+Each finding can be classified using:
+
+| Severity      | Example                                                |
+| ------------- | ------------------------------------------------------ |
+| Critical      | Wireless compromise exposes sensitive internal systems |
+| High          | Weak authentication or significant network exposure    |
+| Medium        | Rogue AP detection gaps                                |
+| Low           | Configuration or monitoring weakness                   |
+| Informational | Security-hardening recommendation                      |
+
+---
+
+# Recommended Defensive Controls
+
+### Authentication
+
+* Prefer WPA3 where supported
+* Use strong authentication credentials
+* Prefer enterprise authentication for appropriate organizational environments
+* Disable legacy protocols where possible
+
+### Network Segmentation
+
+Separate:
+
+```text
+Corporate
+Guest
+IoT
+Management
+Security Infrastructure
+```
+
+### Monitoring
+
+Monitor:
+
+* New BSSIDs
+* Duplicate SSIDs
+* Authentication anomalies
+* Wireless configuration changes
+* Unexpected access points
+* Management-frame anomalies
+
+### Endpoint Protection
+
+Users should:
+
+* Disable automatic connection to unknown networks
+* Verify SSIDs before connecting
+* Avoid sensitive activity on untrusted networks
+* Use MFA
+* Keep operating systems and wireless drivers updated
+
+---
+
+# Project Deliverables
+
+This repository aims to produce:
+
+* Wireless reconnaissance methodology
+* Security assessment checklist
+* Controlled packet-capture analysis
+* Wireless threat model
+* Rogue AP detection methodology
+* Management-frame detection logic
+* Network segmentation assessment
+* Risk-rating framework
+* Defensive recommendations
+* Technical assessment reports
+
+---
+
+# MITRE ATT&CK Mapping
+
+Relevant wireless-related behaviors can be mapped to the MITRE ATT&CK framework where applicable.
+
+Example categories include:
+
+```text
+Initial Access
+Credential Access
+Collection
+Command and Control
+Credential Phishing
+Network Discovery
+```
+
+The mapping should be based on the actual techniques demonstrated or analyzed in each experiment.
+
+---
+
+# Responsible Disclosure & Ethics
+
+This project is intended exclusively for:
+
+* Personal laboratory environments
+* Authorized penetration tests
+* Academic research
+* Security education
+* Defensive security engineering
+
+Do not test wireless networks, devices, or users without explicit authorization.
+
+---
+
+# Future Research
+
+Planned extensions include:
+
+* Automated rogue AP detection
+* Wireless asset discovery dashboard
+* Detection-rule generation
+* Wi-Fi security scoring
+* Integration with SIEM platforms
+* Automated assessment reporting
+* WPA2/WPA3 comparative research
+* Wireless anomaly detection using machine learning
+* Enterprise Wi-Fi threat modeling
+
+---
+
+## Project Focus
+
+**Wireless Security Research • Penetration Testing • Detection Engineering • Threat Analysis • Defensive Security**
+
 
 Sudden performance drops.
 Unusual activity or high data usage.
