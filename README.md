@@ -1,4 +1,4 @@
-# Wi-Fi Penetration Testing & Wireless Security Research
+#  Network Penetration Testing & Wireless Security Research
 
 > **Authorized Security Testing Only**
 > This repository is an educational wireless-security research project designed for controlled lab environments and networks that you own or have explicit permission to test.
