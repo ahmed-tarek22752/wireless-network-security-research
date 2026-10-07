@@ -1,4 +1,4 @@
-#  Network Penetration Testing & Wireless Security Research
+# Network Penetration Testing & Wireless Security Research
 
 > **Authorized Security Testing Only**
 > This repository is an educational wireless-security research project designed for controlled lab environments and networks that you own or have explicit permission to test.
@@ -8,6 +8,8 @@
        alt="Wireless Network Security Research"
        width="100%">
 </p>
+
+---
 
 ## Overview
 
@@ -39,6 +41,14 @@ This project investigates:
 * Enterprise Wi-Fi security controls
 * Detection of suspicious wireless activity
 * Defensive monitoring and incident response
+
+### Wireless Security Attack Surface
+
+<p align="center">
+  <img src="./WiFi-Hacking-MindMap-v1-thumb.png"
+       alt="WiFi Hacking Mind Map"
+       width="90%">
+</p>
 
 ---
 
@@ -134,6 +144,36 @@ Areas of study include:
 * Authentication failure monitoring
 
 The research compares the security properties of different authentication architectures rather than simply demonstrating password attacks.
+
+### EAP Authentication Handshake
+
+<p align="center">
+  <img src="./eap-handshake-general.png"
+       alt="EAP Handshake General"
+       width="90%">
+</p>
+
+The general EAP authentication flow provides a foundation for understanding how wireless clients and authentication infrastructure exchange identity and authentication information.
+
+### EAP-LEAP Handshake
+
+<p align="center">
+  <img src="./eap-leap-handshake.png"
+       alt="EAP-LEAP Handshake"
+       width="90%">
+</p>
+
+This diagram illustrates the authentication flow associated with EAP-LEAP and helps analyze the security characteristics of legacy wireless authentication mechanisms.
+
+### MSCHAPv2 Challenge-Response
+
+<p align="center">
+  <img src="./mschapv2-challenge-response.png"
+       alt="MSCHAPv2 Challenge Response"
+       width="90%">
+</p>
+
+The challenge-response exchange demonstrates the authentication mechanism used by MSCHAPv2 and provides context for evaluating authentication security and credential-protection risks.
 
 ---
 
@@ -497,9 +537,3 @@ Planned extensions include:
 ## Project Focus
 
 **Wireless Security Research • Penetration Testing • Detection Engineering • Threat Analysis • Defensive Security**
-
-
-Sudden performance drops.
-Unusual activity or high data usage.
-Issues logging in.
-The presence of unknown devices on the network.
