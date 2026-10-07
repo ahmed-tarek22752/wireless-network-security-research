@@ -3,6 +3,12 @@
 > **Authorized Security Testing Only**
 > This repository is an educational wireless-security research project designed for controlled lab environments and networks that you own or have explicit permission to test.
 
+<p align="center">
+  <img src="scripts/Wireless%20Network%20Security%20Research.png"
+       alt="Wireless Network Security Research"
+       width="100%">
+</p>
+
 ## Overview
 
 Wireless networks are a critical attack surface across home, public, and enterprise environments. This project provides a structured methodology for assessing Wi-Fi security, identifying weaknesses in wireless configurations, analyzing attack indicators, and developing defensive controls.
